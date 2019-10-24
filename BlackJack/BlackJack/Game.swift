@@ -13,20 +13,23 @@ struct Game {
     let player = Player()
     let hitPlayer = Bool()  // takes another card from the 52 card deck
     
+    var cards = [Card]() // variable to hold deck for computed property hasMoreCards
+    
+    var score = Int()
+    
     
     var hasMoreCards: Bool {
         
-        return Bool()
+        return !cards.isEmpty
     }
     
     var randomComputerScore: Int {
        
-        return randomScore
-        print(randomScore)
+        return Int()
     }
     
-    func newGame() {
-        
+    mutating func newGame() {
+        score = 0
         
         return
     }
@@ -36,14 +39,20 @@ struct Game {
         return
     }
     
-    func hitMe() {
+    mutating func hitMe() -> Card? {
+        cards = cards.shuffled()
+        // popLast removes the last element and returns it
+        return cards.popLast()
         
-        return
     }
     
-    func computerVsPlayer() {
+    func computerVsPlayer() -> Int {
+        let randomNum = [18...21].randomElement()
+        print(randomNum ?? 20)
+        let computerScore = randomNum
         
-        return
+        return score
+        
     }
     
     func gameStatus() {
