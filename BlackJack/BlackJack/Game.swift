@@ -31,7 +31,7 @@ struct Game {
     mutating func newGame() {
         score = 0
         
-        return
+        
     }
     
     func stopHits() {
