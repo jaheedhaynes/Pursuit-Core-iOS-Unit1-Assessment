@@ -24,7 +24,7 @@ struct Game {
     }
     
     var randomComputerScore: Int {
-       
+        
         return Int()
     }
     
@@ -40,24 +40,28 @@ struct Game {
     }
     
     mutating func hitMe() -> Card? {
-        cards = cards.shuffled()
-        // popLast removes the last element and returns it
+        if hitPlayer == true {
+            cards = cards.shuffled() // popLast removes the last element and returns it
+        }
         return cards.popLast()
-        
     }
     
-    func computerVsPlayer() -> Int {
-        let randomNum = [18...21].randomElement()
+    func computerVsPlayer() {
+        let randomNum = [18,19,20,21].randomElement()
         print(randomNum ?? 20)
-        let computerScore = randomNum
+        let computerScore = randomNum!
+        if randomNum! > (player.score) {
+            print("You Lose 🤬")
+        } else {
+            print("🥇🎊 You Win 🎊🥇")
+            
+            
+        }
         
-        return score
-        
+        func gameStatus() {
+            
+            return
+        }
     }
     
-    func gameStatus() {
-        
-        return
-    }
 }
-
