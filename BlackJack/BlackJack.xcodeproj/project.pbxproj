@@ -68,10 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				30924B072361F10600C4600F /* Suit.swift */,
-				30924B0B2361F57C00C4600F /* Player.swift */,
 				30924B092361F12A00C4600F /* FaceCard.swift */,
-				576D1E682356845300765B16 /* Card.swift */,
+				30924B0B2361F57C00C4600F /* Player.swift */,
 				30924B0D2361FF8100C4600F /* Game.swift */,
+				576D1E682356845300765B16 /* Card.swift */,
 				576D1E5F2356839800765B16 /* main.swift */,
 			);
 			path = BlackJack;

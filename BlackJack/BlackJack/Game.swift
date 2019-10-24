@@ -10,8 +10,9 @@ import Foundation
 
 struct Game {
     let deck = [Card]()
-    let player = Player.playerName
-    let hitPlayer = Bool()
+    let player = Player()
+    let hitPlayer = Bool()  // takes another card from the 52 card deck
+    
     
     var hasMoreCards: Bool {
         
@@ -19,10 +20,35 @@ struct Game {
     }
     
     var randomComputerScore: Int {
-        
-        return Int()
+       
+        return randomScore
+        print(randomScore)
     }
     
-
+    func newGame() {
+        
+        
+        return
+    }
+    
+    func stopHits() {
+        
+        return
+    }
+    
+    func hitMe() {
+        
+        return
+    }
+    
+    func computerVsPlayer() {
+        
+        return
+    }
+    
+    func gameStatus() {
+        
+        return
+    }
 }
 
