@@ -8,13 +8,9 @@
 
 import Foundation
 
-enum Player: CaseIterable {
-    case score
-    case cards
-    case playerName
-}
-
-let score = Int()
-let cards = [Card]()
-let playerName = String()
+struct Player {
+    let score = Int()
+    let cards = [Card]()
+    let playerName = String()
+} 
 

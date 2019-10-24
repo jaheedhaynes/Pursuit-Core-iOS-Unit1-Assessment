@@ -18,6 +18,10 @@ struct Game {
         return Bool()
     }
     
+    var randomComputerScore: Int {
+        
+        return Int()
+    }
     
 
 }
