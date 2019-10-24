@@ -8,7 +8,17 @@
 
 import Foundation
 
-let deck = [Card]()
-let player = Player.playerName
-let hitPlayer = Bool()
+struct Game {
+    let deck = [Card]()
+    let player = Player.playerName
+    let hitPlayer = Bool()
+    
+    var hasMoreCards: Bool {
+        
+        return Bool()
+    }
+    
+    
+
+}
 
