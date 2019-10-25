@@ -20,26 +20,21 @@ var player = Player()
 
 var score = player.score
 
-score = 0
+player.score = 21
 
 print("Enter Your Name")
 game.player.playerName = readLine() ?? "John Doe"
-//print(game.player.playerName)
+
 
 let userPrompt = """
-                        👀 HEY... YOU THERE 👀
+                            👀 HEY... YOU THERE 👀
 
 🍺🍺🍺 ARE YOU READY TO LOSE ALL OF YOUR MONEY AND DEVELOP A DRINKING PROBLEM? 🍺🍺🍺
 
-                 IF SO THEN LETS GET THIS GAME STARTED
+                    IF SO THEN LETS GET THIS GAME STARTED
 """
 
 print()
-// TODO: remove these lines after you have added the Suit and FaceCard enums as per the assessment README
-//print("There are \(Card.newDeck(aceValue: 1).count) in a deck of cards")
-// There are 52 in a deck of cards
-
-
 
 repeat {
     print(userPrompt)
@@ -58,17 +53,17 @@ repeat {
         
     } while true
     
-   
+    
     
     
 } while false
 
 
-  print("Keep it rolling? (yes, no)")
-  let shouldContinuePlaying = readLine() ?? ""
-  if shouldContinuePlaying == "yes" {
+print("Keep it rolling? (yes, no)")
+let shouldContinuePlaying = readLine() ?? ""
+if shouldContinuePlaying == "yes" {
     game.newGame()
     playAgain = true
-  } else {
+} else {
     playAgain = true
-  }
+}

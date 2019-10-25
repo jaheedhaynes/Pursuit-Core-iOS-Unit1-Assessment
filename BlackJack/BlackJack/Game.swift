@@ -12,7 +12,7 @@ class Game {
     var deck = [Card]()
     var player = Player()
     let hitPlayer = Bool()  // takes another card from the 52 card deck
-    
+    var score = 0
     
     //------------------------------------------------------------------------------------------------------------------
     // computed properties
@@ -27,12 +27,12 @@ class Game {
         return Int()
     }
     //------------------------------------------------------------------------------------------------------------------
+    
     func newGame() {
         player.score = 0
         deck.removeAll()
-        
-        
-    }
+        }
+    
     
     func stopHits() {
         if hitPlayer == false  {
@@ -45,10 +45,12 @@ class Game {
         }
     }
     
-    func hitMe(hit: [Card]) -> Card? {
-            let newCard = deck.shuffled()
+    
+    
+    func hitMe() {
+        
     }
-    return deck.popLast() // popLast removes the last element and returns it
+    
     
     
     
@@ -60,21 +62,11 @@ class Game {
             print("You Lose 🤬")
         } else {
             print("🥇🎊 You Win 🎊🥇")
-            
-            
-        }
+            }
     }
     
-    func gameStatus(_ card: Card) -> (Int) {
+    
+    func gameStatus() {
         
-        player.score = score
-        
-        
-        
-        print("score: \(player.score)")
-        
-        return Int()
     }
 }
-
-
