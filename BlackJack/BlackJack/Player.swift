@@ -9,8 +9,16 @@
 import Foundation
 
 struct Player {
-    let score = Int()
-    let cards = [Card]()
-    let playerName = String()
-} 
+    var score = 0
+    var cards = [Card]()
+    var playerName = ""
+}
+//    init(score: Int,
+//         cards: [Card],
+//         playerName: String) {
+//        self.score = score
+//        self.cards = cards
+//        self.playerName = playerName
+//    }
+ 
 

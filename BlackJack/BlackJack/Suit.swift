@@ -9,13 +9,9 @@
 import Foundation
 
 enum Suit: (String),(CaseIterable) {
-    case diamond
-    case heart
-    case spade
-    case club
+    case diamond = "♦️"
+    case heart = "♥️"
+    case spade = "♠️"
+    case club = "♣️"
 }
 
-let diamond = "♦️"
-let heart = "♥️"
-let spade = "♠️"
-let club = "♣️"

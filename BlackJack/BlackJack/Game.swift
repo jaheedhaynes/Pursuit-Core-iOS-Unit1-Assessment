@@ -8,48 +8,54 @@
 
 import Foundation
 
-struct Game {
-    let deck = [Card]()
-    let player = Player()
+class Game {
+    var deck = [Card]()
+    var player = Player()
     let hitPlayer = Bool()  // takes another card from the 52 card deck
     
-    var cards = [Card]() // variable to hold deck for computed property hasMoreCards
     
-    var score = Int()
-    
+    //------------------------------------------------------------------------------------------------------------------
+    // computed properties
     
     var hasMoreCards: Bool {
         
-        return !cards.isEmpty
+        return !deck.isEmpty
     }
     
     var randomComputerScore: Int {
         
         return Int()
     }
-    
-    mutating func newGame() {
-        score = 0
+    //------------------------------------------------------------------------------------------------------------------
+    func newGame() {
+        player.score = 0
+        deck.removeAll()
         
         
     }
     
     func stopHits() {
-        
-        return
+        if hitPlayer == false  {
+            if player.score > randomComputerScore {
+                print("🥇🎊 You Win 🎊🥇")
+            } else if randomComputerScore > player.score {
+                print("You Lose 🤬")
+            }
+            
+        }
     }
     
-    mutating func hitMe() -> Card? {
-        if hitPlayer == true {
-            cards = cards.shuffled() // popLast removes the last element and returns it
-        }
-        return cards.popLast()
+    func hitMe(hit: [Card]) -> Card? {
+            let newCard = deck.shuffled()
     }
+    return deck.popLast() // popLast removes the last element and returns it
+    
+    
     
     func computerVsPlayer() {
         let randomNum = [18,19,20,21].randomElement()
         print(randomNum ?? 20)
-        let computerScore = randomNum!
+        _ = randomNum!
         if randomNum! > (player.score) {
             print("You Lose 🤬")
         } else {
@@ -57,11 +63,18 @@ struct Game {
             
             
         }
-        
-        func gameStatus() {
-            
-            return
-        }
     }
     
+    func gameStatus(_ card: Card) -> (Int) {
+        
+        player.score = score
+        
+        
+        
+        print("score: \(player.score)")
+        
+        return Int()
+    }
 }
+
+
