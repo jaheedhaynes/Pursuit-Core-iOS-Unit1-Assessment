@@ -9,10 +9,10 @@
 import Foundation
 
 class Game {
-    var deck = [Card]()
-    var player = Player()
-    let hitPlayer = Bool()  // takes another card from the 52 card deck
-    var score = 0
+    var deck = [Card.newDeck(aceValue: 1)]
+    var player = Player.init(score: 0, cards: [Card](), playerName: "Player")
+    let hitPlayer = Bool()
+    var score = 0 // initial score
     
     //------------------------------------------------------------------------------------------------------------------
     // computed properties
@@ -23,15 +23,16 @@ class Game {
     }
     
     var randomComputerScore: Int {
-        
+        let randCompScore = Int.random(in: 18...21)
         return Int()
     }
     //------------------------------------------------------------------------------------------------------------------
+    // methods (functions)
     
     func newGame() {
         player.score = 0
         deck.removeAll()
-        }
+    }
     
     
     func stopHits() {
@@ -47,26 +48,43 @@ class Game {
     
     
     
-    func hitMe() {
-        
+    func hitMe(hit: String, score: Int) -> Int{
+        if hit == hitPlayer.description {
+            // shuffle the card array
+            deck.shuffle()
+            // popLast removes a card from the array and returns
+            if let randomPick = deck.popLast() {
+                player.score += randomPick
+            }
+           
+        }
+        return player.score
     }
     
     
     
     
     func computerVsPlayer() {
-        let randomNum = [18,19,20,21].randomElement()
-        print(randomNum ?? 20)
-        _ = randomNum!
-        if randomNum! > (player.score) {
+        //        let randomNum = [18,19,20,21].randomElement()
+        //        print(randomNum ?? 20)
+        //        _ = randomNum!
+        if randomComputerScore >= (player.score) {
             print("You Lose 🤬")
         } else {
             print("🥇🎊 You Win 🎊🥇")
-            }
+        }
     }
     
     
-    func gameStatus() {
+    func gameStatus(playerScore: Int, currentScore: Int) {
+        if player.score == 21 {
+            print("❗️🍾  BLACK JACK 🍾❗️")
+        } else if randomComputerScore == 21 {
+            print("YOU LOSE, GIVE US YOUR MONEY!!!")
+        } else if player.score > 21 {
+            print("BUST 🤬")
+        }
         
     }
 }
+
