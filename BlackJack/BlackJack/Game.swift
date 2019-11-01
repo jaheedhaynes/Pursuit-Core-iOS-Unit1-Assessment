@@ -23,7 +23,7 @@ class Game {
     }
     
     var randomComputerScore: Int {
-        let randCompScore = Int.random(in: 18...21)
+        let _ = Int.random(in: 18...21)
         return Int()
     }
     //------------------------------------------------------------------------------------------------------------------
@@ -48,20 +48,15 @@ class Game {
     
     
     
-    func hitMe(hit: String, score: Int) -> Int{
-        if hit == hitPlayer.description {
+    func hitMe(userHit: String, score: Int) -> Int{
+        if userHit == userHit {
             // shuffle the card array
             deck.shuffle()
-            // popLast removes a card from the array and returns
-            if let randomPick = deck.popLast() {
-                player.score += randomPick
-            }
-           
-        }
-        return player.score
+            // popLast removes a card from the array and returns it to player.score
+            let randomCard = deck.popLast() ??
+            player.score += randomCard.newDeck
+         return player.score
     }
-    
-    
     
     
     func computerVsPlayer() {

@@ -13,12 +13,6 @@ struct Player {
     var cards = [Card]()
     var playerName = ""
 }
-//    init(score: Int,
-//         cards: [Card],
-//         playerName: String) {
-//        self.score = score
-//        self.cards = cards
-//        self.playerName = playerName
-//    }
+
  
 

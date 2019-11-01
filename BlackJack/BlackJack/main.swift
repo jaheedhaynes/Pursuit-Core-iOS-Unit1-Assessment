@@ -37,6 +37,7 @@ let userPrompt = """
 print()
 
 repeat {
+    
     print(userPrompt)
     repeat{
         game.newGame()
